@@ -1,0 +1,232 @@
+spec_name	spec_name_ESI
+Achillea millefolium	Achillea millefolium agg.
+Achillea styriaca	Achillea styriaca
+Aconitum lycoctonum	Aconitum lycoctonum
+Aconitum variegatum	Aconitum variegatum
+Actaea spicata	Actaea spicata
+Aegopodium podagraria	Aegopodium podagraria
+Aethusa cynapium	Aethusa cynapium
+Agrostis canina	Agrostis canina
+Agrostis capillaris	Agrostis capillaris
+Agrostis stolonifera	Agrostis stolonifera
+Ajuga genevensis	Ajuga genevensis
+Ajuga reptans	Ajuga reptans
+Alisma plantago-aquatica	Alisma plantago-aquatica
+Alliaria petiolata	Alliaria petiolata
+Allium senescens subsp. montanum	Allium senescens subsp. montanum
+Allium species	Allium species
+Anemone nemorosa	Anemone nemorosa
+Angelica sylvestris	Angelica sylvestris
+Anthericum ramosum	Anthericum ramosum
+Anthriscus sylvestris	Anthriscus sylvestris
+Arrhenatherum elatius	Arrhenatherum elatius
+Artemisia vulgaris	Artemisia vulgaris
+Asarum europaeum	Asarum europaeum
+Asplenium septentrionale	Asplenium septentrionale
+Asplenium trichomanes	Asplenium trichomanes
+Astragalus glycyphyllos	Astragalus glycyphyllos
+Athyrium filix-femina	Athyrium filix-femina
+Aurinia saxatilis subsp. saxatilis	Aurinia saxatilis subsp. saxatilis
+Avenella flexuosa	Avenella flexuosa
+Betonica officinalis	Betonica officinalis
+Bidens frondosus	Bidens frondosus
+Bidens tripartitus	Bidens tripartitus
+Brachypodium pinnatum	Brachypodium pinnatum
+Bromus benekenii	Bromus benekenii
+Calamagrostis arundinacea	Calamagrostis arundinacea
+Calamagrostis epigejos	Calamagrostis epigejos
+Calluna vulgaris	Calluna vulgaris
+Caltha palustris	Caltha palustris
+Calystegia sepium	Calystegia sepium
+Campanula patula	Campanula patula
+Campanula persicifolia	Campanula persicifolia
+Campanula rapunculoides	Campanula rapunculoides
+Campanula rotundifolia	Campanula rotundifolia agg.
+Campanula trachelium	Campanula trachelium
+Cardamine amara	Cardamine amara subsp. amara
+Cardamine flexuosa	Cardamine flexuosa
+Cardamine impatiens	Cardamine impatiens
+Arabidopsis arenosa	Arabidopsis arenosa
+Carduus personata	Carduus personata
+Carduus species	Carduus species
+Carex acuta	Carex acuta
+Carex brizoides	Carex brizoides
+Carex buekii	Carex buekii
+Carex digitata	Carex digitata
+Carex muricata agg.	Carex muricata agg.
+Carex species	Carex species
+Chaerophyllum hirsutum	Chaerophyllum hirsutum
+Chaerophyllum temulum	Chaerophyllum temulum
+Chelidonium majus	Chelidonium majus
+Circaea alpina	Circaea alpina
+Cirsium oleraceum	Cirsium oleraceum
+Clematis vitalba	Clematis vitalba
+Clinopodium vulgare	Clinopodium vulgare
+Convallaria majalis	Convallaria majalis
+Convolvulus arvensis	Convolvulus arvensis
+Cuscuta europaea	Cuscuta europaea
+Cymbalaria muralis	Cymbalaria muralis
+Cystopteris fragilis	Cystopteris fragilis
+Cytisus nigricans	Cytisus nigricans
+Dactylis glomerata	Dactylis glomerata
+Danthonia decumbens	Danthonia decumbens
+Deschampsia cespitosa	Deschampsia cespitosa
+Dianthus carthusianorum subsp. carthusianorum	Dianthus carthusianorum agg.
+Dianthus deltoides	Dianthus deltoides
+Digitalis grandiflora	Digitalis grandiflora
+Doronicum austriacum	Doronicum austriacum
+Dryopteris carthusiana	Dryopteris carthusiana
+Dryopteris dilatata	Dryopteris dilatata
+Dryopteris expansa	Dryopteris expansa
+Dryopteris filix-mas	Dryopteris filix-mas
+Elymus caninus	Elymus caninus
+Epilobium angustifolium	Epilobium angustifolium
+Epilobium collinum	Epilobium collinum
+Epilobium hirsutum	Epilobium hirsutum
+Epilobium montanum	Epilobium montanum
+Epilobium roseum	Epilobium roseum
+Epilobium species	Epilobium species
+Equisetum arvense	Equisetum arvense
+Equisetum palustre	Equisetum palustre
+Euphorbia cyparissias	Euphorbia cyparissias
+Euphorbia dulcis	Euphorbia dulcis
+Fallopia convolvulus	Fallopia convolvulus
+Fallopia dumetorum	Fallopia dumetorum
+Festuca gigantea	Festuca gigantea
+Festuca heterophylla	Festuca heterophylla
+Festuca ovina	Festuca ovina
+Festuca pallens	Festuca pallens
+Festuca rubra	Festuca rubra
+Filipendula ulmaria	Filipendula ulmaria
+Fragaria moschata	Fragaria moschata
+Fragaria vesca	Fragaria vesca
+Galeobdolon montanum	Galeobdolon luteum agg.
+Galeopsis bifida	Galeopsis tetrahit agg.
+Galeopsis pubescens	Galeopsis pubescens
+Galeopsis species	Galeopsis species
+Galeopsis speciosa	Galeopsis speciosa
+Galium album subsp. album	Galium mollugo agg.
+Galium aparine	Galium aparine
+Galium odoratum	Galium odoratum
+Galium palustre	Galium palustre agg.
+Galium rotundifolium	Galium rotundifolium
+Galium sylvaticum	Galium sylvaticum
+Galium uliginosum	Galium uliginosum
+Genista germanica	Genista germanica
+Genista tinctoria	Genista tinctoria
+Geranium robertianum	Geranium robertianum
+Geum urbanum	Geum urbanum
+Glechoma hederacea	Glechoma hederacea agg.
+Glyceria fluitans	Glyceria fluitans
+Glyceria maxima	Glyceria maxima
+Gymnocarpium dryopteris	Gymnocarpium dryopteris
+Hedera helix	Hedera helix
+Hepatica nobilis	Hepatica nobilis
+Heracleum sphondylium	Heracleum sphondylium
+Hieracium lachenalii	Hieracium lachenalii
+Hieracium murorum	Hieracium murorum
+Pilosella officinarum	Pilosella officinarum
+Hieracium sabaudum	Hieracium sabaudum
+Hieracium umbellatum	Hieracium umbellatum
+Holcus lanatus	Holcus lanatus
+Humulus lupulus	Humulus lupulus
+Hylotelephium maximum	Hylotelephium telephium agg.
+Hypericum montanum	Hypericum montanum
+Hypericum perforatum	Hypericum perforatum
+Impatiens glandulifera	Impatiens glandulifera
+Impatiens noli-tangere	Impatiens noli-tangere
+Impatiens parviflora	Impatiens parviflora
+Iris pseudacorus	Iris pseudacorus
+Juncus articulatus	Juncus articulatus
+Juncus effusus	Juncus effusus
+Knautia arvensis	Knautia arvensis agg.
+Knautia maxima	Knautia maxima
+Koeleria pyramidata	Koeleria pyramidata
+Lactuca serriola	Lactuca serriola
+Lamium maculatum	Lamium maculatum
+Lapsana communis	Lapsana communis
+Lathyrus vernus	Lathyrus vernus
+Lilium martagon	Lilium martagon
+Lunaria rediviva	Lunaria rediviva
+Luzula luzuloides	Luzula luzuloides
+Luzula pilosa	Luzula pilosa
+Viscaria vulgaris	Viscaria vulgaris
+Lycopus europaeus	Lycopus europaeus
+Lysimachia vulgaris	Lysimachia vulgaris
+Lythrum salicaria	Lythrum salicaria
+Melampyrum nemorosum	Melampyrum nemorosum
+Melampyrum pratense	Melampyrum pratense
+Melica nutans	Melica nutans
+Mentha longifolia	Mentha longifolia
+Mentha ×verticillata	Mentha ×verticillata
+Mercurialis perennis	Mercurialis perennis
+Milium effusum	Milium effusum
+Moehringia trinervia	Moehringia trinervia
+Mycelis muralis	Mycelis muralis
+Myosotis palustris agg.	Myosotis palustris agg.
+Myosotis sylvatica	Myosotis sylvatica
+Myosoton aquaticum	Myosoton aquaticum
+Origanum vulgare	Origanum vulgare
+Oxalis acetosella	Oxalis acetosella
+Paris quadrifolia	Paris quadrifolia
+Persicaria amphibia	Persicaria amphibia
+Persicaria hydropiper	Persicaria hydropiper
+Phalaris arundinacea	Phalaris arundinacea
+Pimpinella saxifraga subsp. saxifraga	Pimpinella saxifraga
+Plantago lanceolata	Plantago lanceolata
+Poa angustifolia	Poa pratensis agg.
+Poa nemoralis	Poa nemoralis
+Poa palustris	Poa palustris
+Poa trivialis	Poa trivialis
+Polygonatum multiflorum	Polygonatum multiflorum
+Polygonatum odoratum	Polygonatum odoratum
+Polypodium vulgare	Polypodium vulgare agg.
+Prenanthes purpurea	Prenanthes purpurea
+Pulmonaria obscura	Pulmonaria officinalis agg.
+Ranunculus lanuginosus	Ranunculus lanuginosus
+Ranunculus repens	Ranunculus repens
+Rumex acetosella	Rumex acetosella
+Rumex aquaticus	Rumex aquaticus
+Rumex conglomeratus	Rumex conglomeratus
+Rumex obtusifolius	Rumex obtusifolius
+Salvia glutinosa	Salvia glutinosa
+Scrophularia nodosa	Scrophularia nodosa
+Scutellaria galericulata	Scutellaria galericulata
+Securigera varia	Securigera varia
+Senecio germanicus	Senecio nemorensis agg.
+Senecio ovatus	Senecio nemorensis agg.
+Senecio viscosus	Senecio viscosus
+Silene nutans	Silene nutans
+Silene species	Silene species
+Silene vulgaris	Silene vulgaris
+Solanum dulcamara	Solanum dulcamara
+Solidago virgaurea	Solidago virgaurea
+Stachys palustris	Stachys palustris
+Stachys sylvatica	Stachys sylvatica
+Stellaria graminea	Stellaria graminea
+Stellaria holostea	Stellaria holostea
+Stellaria media	Stellaria media agg.
+Stellaria nemorum	Stellaria nemorum
+Symphytum officinale	Symphytum officinale
+Taraxacum species	Taraxacum species
+Thymus pulegioides	Thymus pulegioides
+Torilis japonica	Torilis japonica
+Trifolium alpestre	Trifolium alpestre
+Urtica dioica	Urtica dioica
+Vaccinium myrtillus	Vaccinium myrtillus
+Vaccinium vitis-idaea	Vaccinium vitis-idaea
+Valeriana excelsa subsp. sambucifolia	Valeriana excelsa subsp. sambucifolia
+Verbascum densiflorum	Verbascum densiflorum
+Verbascum nigrum	Verbascum nigrum
+Verbascum species	Verbascum species
+Veronica beccabunga	Veronica beccabunga
+Veronica chamaedrys	Veronica chamaedrys agg.
+Veronica officinalis	Veronica officinalis
+Vicia dumetorum	Vicia dumetorum
+Vicia species	Vicia species
+Vicia sylvatica	Vicia sylvatica
+Vincetoxicum hirundinaria	Vincetoxicum hirundinaria
+Viola collina	Viola collina
+Viola reichenbachiana	Viola reichenbachiana
+Viola species	Viola species
+Viola tricolor	Viola tricolor
