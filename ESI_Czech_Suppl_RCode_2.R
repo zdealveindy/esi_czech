@@ -2,15 +2,18 @@
 # Supplementary R code 2: Calculating summary and ploting figures
 # Author of the R code: David Zeleny (zeleny@ntu.edu.tw, April 2019)
 
-### Load results of calculation, calculate summary and plot figures ----
-#setwd ('c:/Users/zeleny/Dropbox/CLANKY/generalists specialists czech vegetation/data/ESI Czech database_v2.0')
-
 # install.packages ('ppcor')  # required for calculating partical correlation
 
-load ('theta92.r')
-load ('theta73.r')
-load ('theta19.r')
+### Load results of calculation, calculate summary and plot figures ----
+#setwd ('c:/Users/zeleny/Dropbox/CLANKY/generalists specialists czech vegetation/data/ESI Czech database_v2.0')
+# load ('theta92.r')
+# load ('theta73.r')
+# load ('theta19.r')
 
+# Load data from GitHub
+load (url ('https://github.com/zdealveindy/esi_czech/blob/master/theta92.r?raw=true')) # load theta92
+load (url ('https://github.com/zdealveindy/esi_czech/blob/master/theta73.r?raw=true')) # load theta73
+load (url ('https://github.com/zdealveindy/esi_czech/blob/master/theta19.r?raw=true')) # load theta19
 
 # Summary statistics ----
 range (theta92$ESI) #2.832964 8.368945
