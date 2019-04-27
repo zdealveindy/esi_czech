@@ -1,10 +1,18 @@
-# For PRESLIA - figures max 126 mm wide 188 mm tall
-# Reproducible also for parallel computing (for HCR stratification)
-# library (readxl)
+# Zeleny D. & Chytry M. (2019): Ecological Specialization Index for species of the Czech flora. Preslia, XX:XX-XX.
+# Supplementary R code 1: Calculating Ecological Specialization Index
+# Author of the R code: David Zeleny (zeleny@ntu.edu.tw, April 2019)
+
+# Note: the script is provided as a reference for the statistical analysis. Since primary data used in this R code
+# are not publicly available, this R script is not reproducible. This does not apply to the other two R codes, for which
+# data are included at GitHub repository.
+
+# Used libraries:
 library (tidyverse)
 library (parallel)
-#devtools::install_github ('zdealveindy/theta')
-library (theta)
+# devtools::install_github ('zdealveindy/theta')
+library (theta)  # used version 0.7-41
+
+# Custom-built functions:
 remove_zerocols <- function (x) x[,colSums (x) > 0, drop = F]  # removes zero columns in species comp data (used in HCR resampling)
 
 no_rel_beta <- function (beta, min_rel, max_rel, beta_max = 1) # predicts number of releves for given betadiversity (sensu Wiser & De Caceres 2013)
@@ -41,7 +49,6 @@ Arel <- function (sitspe, assoc)  # sitspe is species composition data.frame, as
   })
 }
 
-
 Aabs <- function (sitspe, assoc) # sitspe is species composition data.frame, assoc is vector of associations
 {
   assoc <- as.factor (assoc)
@@ -54,11 +61,9 @@ Aabs <- function (sitspe, assoc) # sitspe is species composition data.frame, ass
   })
 }
 
-
-
 # Calculate ESI on Czech National Phytosociological Database
-#setwd ('c:\\Users\\zeleny\\Dropbox\\CLANKY\\generalists specialists czech vegetation\\data\\ESI Czech database\\')
-setwd ('h:/Dropbox_select/CLANKY/generalists specialists czech vegetation/data/ESI Czech database_v2.0')
+# Modify the setwd into the folder where the data are stored:
+# setwd ('c:/Users/zeleny/Dropbox/CLANKY/generalists specialists czech vegetation/data/ESI Czech database_v2.0')
 
 # Import database data ----
 # whole database
@@ -81,6 +86,7 @@ spda19 <- spda92[colSums (comm19_0) > 0,]
 head19 <- head92[head92$forest_nonforest == 'forest ',]
 shhe19 <- shhe92[head92$forest_nonforest == 'forest ',]
 
+# ====================================================================================================================
 # HCR resampling (each dataset separately) -----
 # HCR whole database ----
 geog_groups_92 <- unique (shhe92$Group_Number)
@@ -251,7 +257,7 @@ spda19_hcr <- spda19[colSums (comm19_hcr_0) > 0,]
 
 save ('comm19_hcr', 'spda19_hcr', file = 'comm_and_spda19_hcr.RData' )
 
-# Calculate Whittaker's beta without outliers for each dataset ----
+# Calculate Whittaker's beta without outliers for each dataset (parallel computing with 4 cores) ----
 theta92.w10.raref.out <- calculate.theta (comm92_hcr, thresh = 10, psample = 10, rarefaction = TRUE, remove.out = TRUE, verbal = T, parallel = TRUE, no.cores = 4)
 theta73.w10.raref.out <- calculate.theta (comm73_hcr, thresh = 10, psample = 10, rarefaction = TRUE, remove.out = TRUE, verbal = T, parallel = TRUE, no.cores = 4)
 theta19.w10.raref.out <- calculate.theta (comm19_hcr, thresh = 10, psample = 10, rarefaction = TRUE, remove.out = TRUE, verbal = T, parallel = TRUE, no.cores = 4)
@@ -261,6 +267,7 @@ save (theta92.w10.raref.out, file = 'theta92.w10.raref.out.r')
 save (theta73.w10.raref.out, file = 'theta73.w10.raref.out.r')
 save (theta19.w10.raref.out, file = 'theta19.w10.raref.out.r')
 
+# ====================================================================================================================
 # Load results of calculation ----
 load ('theta92.w10.raref.out.r')
 load ('theta73.w10.raref.out.r')
@@ -270,8 +277,6 @@ load ('theta19.w10.raref.out.r')
 theta92 <- theta92.w10.raref.out
 theta73 <- theta73.w10.raref.out
 theta19 <- theta19.w10.raref.out
-
-
 
 # Calculate ESI ----
 theta92$ESI <- 10-theta92.w10.raref.out$theta
@@ -312,51 +317,42 @@ theta19 <- merge (theta19, data.frame (nass19.occ, nass19.rel, nass19.abs), by.x
 
 # Count number of habitats per species ----
 habitats <- read.delim ('Sadlo-Chytry-habitats.txt', row.names = 1)
-theta92 <- merge(theta92, habitats[,c('frequency_narrow_habitats', 'frequency_as_otimum_narrow_habitats'), drop = F], by.x = 'sciname_new', by.y = 'row.names', all.x = TRUE)
-theta73 <- merge(theta73, habitats[,c('frequency_narrow_habitats', 'frequency_as_otimum_narrow_habitats'), drop = F], by.x = 'sciname_new', by.y = 'row.names', all.x = TRUE)
-theta19 <- merge(theta19, habitats[,c('frequency_narrow_habitats', 'frequency_as_otimum_narrow_habitats'), drop = F], by.x = 'sciname_new', by.y = 'row.names', all.x = TRUE)
+theta92 <- merge(theta92, habitats[,c('frequency_narrow_habitats', 'frequency_as_optimum_narrow_habitats'), drop = F], by.x = 'sciname_new', by.y = 'row.names', all.x = TRUE)
+theta73 <- merge(theta73, habitats[,c('frequency_narrow_habitats', 'frequency_as_optimum_narrow_habitats'), drop = F], by.x = 'sciname_new', by.y = 'row.names', all.x = TRUE)
+theta19 <- merge(theta19, habitats[,c('frequency_narrow_habitats', 'frequency_as_optimum_narrow_habitats'), drop = F], by.x = 'sciname_new', by.y = 'row.names', all.x = TRUE)
 
 
 # Ellenberg, redlist and origin in the Czech Rep ----
 ell_red_orig <- read.delim ('ell-red-orig.txt', fileEncoding = 'UTF-16LE')
 
-# ell.inv <- read.delim ('Ellenberg+invasive status-Tichy-Chytry.txt')
-# #m3 <- merge (ell.inv, cbind (pladias.nomen, pladias.nomen), by.x = 1, by.y = 1, all.x = T)
-# theta30 <- merge (theta30, ell.inv, by.x = 1, by.y = 1, all.x = T)
-# theta24 <- merge (theta24, ell.inv, by.x = 1, by.y = 1, all.x = T)
-# theta05 <- merge (theta05, ell.inv, by.x = 1, by.y = 1, all.x = T)
-
-# Ellenberg values (Chytry et al. 2018)----
-#ell0 <- read_xlsx ('P182ChytryAppendix.xlsx', sheet = 2)[,c("'Name', 'Lx.CZ", "Tx.CZ", "Mx.CZ", "Rx.CZ", "Nx.CZ","S.CZ")]
-#ell <- ell0
-#ell[ell0 == 'x'] <- NA
-
-
-
 theta92 <- merge(theta92, ell_red_orig, by.x = 'sciname_new', by.y = 'lat_name', all.x = TRUE)
 theta73 <- merge(theta73, ell_red_orig, by.x = 'sciname_new', by.y = 'lat_name', all.x = TRUE)
 theta19 <- merge(theta19, ell_red_orig, by.x = 'sciname_new', by.y = 'lat_name', all.x = TRUE)
 
-# remove x values from eiv (only for all species in theta92)
-CIV <- theta92[, 15:19]
-for (co in 1:ncol (CIV))
-  for (ro in 1:nrow (CIV)){
-    CIV[ro,co] <- ifelse (any (strsplit (as.character (CIV[ro, co]), split = '')[[1]] == 'x'), NA, as.character (CIV[ro, co]))    
+# replace 'x' values from eiv (only for all species in theta92) by 99
+CIV_0 <- theta92[, 15:19]
+CIV_0 <- apply (CIV_0, 2, as.character)
+CIV <- matrix (NA, ncol = ncol (CIV_0), nrow = nrow (CIV_0))
+for (co in 1:ncol (CIV_0))
+  for (ro in 1:nrow (CIV_0)){
+    CIV[ro,co] <- ifelse (any (strsplit (as.character (CIV_0[ro, co]), split = '')[[1]] == 'x'), 99, as.numeric (CIV_0[ro, co]))    
   }
 
 CIV <- sapply (CIV, FUN = function (x) as.numeric (as.character (x)))
 theta92[,15:19] <- CIV
 
-
-
-# Save and load data for further calculation ----
+# Save data for further calculation ----
 save (theta92, file = 'theta92.r')
 save (theta73, file = 'theta73.r')
 save (theta19, file = 'theta19.r')
 
+# =====================================
+# Load data for further calculation ----
+load (file = 'theta92.r')
+load (file = 'theta73.r')
+load (file = 'theta19.r')
 
-
-# Prepare output table for PLADIAS ----
+# Prepare output table for PLADIAS website ----
 merged.all <- theta92[, c("sciname_new", "ESI", "occur.freq")]
 names (merged.all) <- c('sci.name', 'ESI_w', 'freq_w')
 merged.all <- merge (merged.all, theta73[,c("sciname_new", "ESI", "occur.freq")], by.x = 'sci.name', by.y = 'sciname_new', all.x = TRUE)
@@ -365,13 +361,3 @@ merged.all <- merge (merged.all, theta19[,c("sciname_new", "ESI", "occur.freq")]
 names (merged.all)[6:7] <- c('ESI_f', 'freq_f')
 write.table (merged.all, file = 'Pladias-ESI.txt', sep = '\t', row.names = F)
 
-
-# Compare with calculation on stratified and classified only dataset (ESI30)
-pladias_esi30 <- read.delim ('h:\\Dropbox_select\\CLANKY\\generalists specialists czech vegetation\\data\\ESI Czech database\\Pladias-ESI.txt', row.names = 1)
-
-merged_old_new <- dplyr::left_join (pladias_esi30, theta92, by = c('sci.name' = 'sciname_new'))
-plot (ESI ~ ESI.30, data = merged_old_new)
-abline (0,1)
-
-hist (merged_old_new$ESI - merged_old_new$ESI.30)
-sum (abs (merged_old_new$ESI - merged_old_new$ESI.30) < 0.5, na.rm = T)/nrow (merged_old_new)  # 92% of species changed less than 0.5 (ESI for the whole database)
