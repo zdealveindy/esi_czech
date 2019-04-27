@@ -121,15 +121,15 @@ ppcor::pcor (na.omit (theta92[, c('ESI', 'nass92.rel', 'occur.freq')]), method =
 
 
 # Specialization and number of habitats (narrowly defined sensu Sadlo et al. 2007) ----
-cor_ESI_Hocc <- cor (theta92$ESI, theta92$frequency_narrow_habitats+theta92$frequency_as_optimum_narrow_habitats, use = 'complete', method = 'sp')
-pcor_ESI_Hocc_freq <- ppcor::pcor (na.omit (cbind (theta92$ESI, theta92$frequency_narrow_habitats+theta92$frequency_as_optimum_narrow_habitats, theta92$occur.freq)), method = 'sp')$estimate[2,1]
+cor_ESI_Hocc <- cor (theta92$ESI, theta92$frequency_narrow_habitats+theta92$frequency_as_optimum_narrow_habitats, use = 'complete', method = 'sp') # -0.47
+pcor_ESI_Hocc_freq <- ppcor::pcor (na.omit (cbind (theta92$ESI, theta92$frequency_narrow_habitats+theta92$frequency_as_optimum_narrow_habitats, theta92$occur.freq)), method = 'sp')$estimate[2,1] # -0.43
 plot (ESI ~ I(theta92$frequency_narrow_habitats+theta92$frequency_as_optimum_narrow_habitats), theta92, pch = 16, cex = 0.5, col = 'black', las = 1, cex.axis = .9, xlab = expression (paste ('Number of habitats (', H[occ], ')')), ylab = expression (Ecological~Specialization~Index~(ESI[w])))
 legend ('topright', bty = 'n', legend = bquote (paste (rho==.(formatC (cor_ESI_Hocc, format = 'f', digits = 2)), ', ', paste (rho[part]==.(formatC (pcor_ESI_Hocc_freq, format = 'f', digits = 2))))))
 title (main = 'D', adj = 0)
 
 # correlation with Hopt
 cor (theta92$ESI, theta92$frequency_as_optimum_narrow_habitats, use = 'complete', method = 'sp')  # -0.37
-ppcor::pcor (na.omit (cbind (theta92$ESI, theta92$frequency_as_otimum_narrow_habitats, theta92$occur.freq)), method = 'sp')$estimate[2,1] # -0.29
+ppcor::pcor (na.omit (cbind (theta92$ESI, theta92$frequency_as_otimum_narrow_habitats, theta92$occur.freq)), method = 'sp')$estimate[2,1] # -0.30
 
 
 Origin2 <- as.character (theta92$origin)
