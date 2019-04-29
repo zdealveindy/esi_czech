@@ -142,7 +142,7 @@ text (x = 1:3, y = 8.5, labels = c('a', 'a', 'b'))
 text (x = 1:3, y = 2.2, labels = as.vector (table (Origin2)), cex = .7)
 title (main = 'E', adj = 0)
 
-# Specialization and conservation status - Czech Republic----
+# Specialization and conservation status - Czech Republic - not directly used in the paper----
 redlist.category <- theta92$red
 redlist.category.2 <- substr (as.character (redlist.category), 1,2)
 redlist.category.3 <- as.character (redlist.category.2)
@@ -152,23 +152,22 @@ agricolae:::HSD.test (aov (theta92$ESI ~ redlist.category.3), 'redlist.category.
 
 #IUCN
 IUCN <- as.character (theta92$IUCN)
-IUCN[IUCN == ''] <- 'no'
-IUCN[IUCN == 'DD'] <- 'no'
-IUCN[is.na (IUCN)] <- 'no'
-IUCN <- factor (IUCN, levels = c('RE', 'CR', 'EN', 'VU', 'NT', 'LC', 'no'))
-ESI.w.RE <- theta92$ESI[IUCN != 'RE']  # remove RE category (only 4 species)
-IUCN.w.RE <- IUCN[IUCN != 'RE']
-summary (aov (ESI.w.RE ~ IUCN.w.RE)) # F =  76.63, P <2e-16 ***
+IUCN[IUCN == ''] <- 'LC'
+IUCN[IUCN == 'DD'] <- 'NA'
+IUCN <- factor (IUCN, levels = c('RE', 'CR', 'EN', 'VU', 'NT', 'LC'))
+ESI.w.RE <- theta92$ESI[IUCN != 'RE' | is.na (IUCN)]  # remove RE category (only 4 species)
+IUCN.w.RE <- IUCN[IUCN != 'RE' | is.na (IUCN)]
+summary (aov (ESI.w.RE ~ IUCN.w.RE)) # F =  88.79, P <2e-16 ***
 agricolae:::HSD.test (aov (ESI.w.RE ~ IUCN.w.RE), 'IUCN.w.RE', group = T, console = T)
-bx.iucn <- boxplot (ESI.w.RE ~ IUCN.w.RE, notch = T, ylim = c(2,9), names = c('RE', 'CR', 'EN', 'VU', 'NT', 'LC', 'no'), xlab = 'Red List (IUCN categories)', ylab = expression (Ecological~Specialization~Index~(ESI[w])), las = 1, outline = F, cex.axis = .88)
-points (x = c(1,1,1,1), y = theta92[IUCN == 'RE', 'ESI'][1:4], cex = 1.5, pch = 3)
-text (x = 2:9, y = 8.5, labels = c('a', 'a', 'a', 'b', 'b', 'c'))
+bx.iucn <- boxplot (ESI.w.RE ~ IUCN.w.RE, notch = T, ylim = c(2,9), names = c('RE', 'CR', 'EN', 'VU', 'NT', 'LC'), xlab = 'Red List (IUCN categories)', ylab = expression (Ecological~Specialization~Index~(ESI[w])), las = 1, outline = F, cex.axis = .88)
+points (x = c(1,1,1,1), y = theta92[IUCN == 'RE', 'ESI'][!is.na (theta92[IUCN == 'RE', 'ESI'])], cex = 1.5, pch = 3)
+text (x = 2:9, y = 8.5, labels = c('a', 'a', 'a', 'b', 'c'))
 text (x = 1:9, y = 2.2, labels = as.vector (table (IUCN)), cex = .7)
 title (main = 'F', adj = 0)
 
 dev.off ()
 
-## Specialization and Ellenberg IV (redefined for Czech republic) ----
+## FIg 2 (Specialization and Ellenberg IV redefined for the Czech Republic) ----
 
 tiff ('ESI-Fig2.tiff', width = 126, height = 188, units = 'mm', res = 600, pointsize = 12, compression = 'lzw')
 par (mfrow = c(3,2), mar = c(4.6, 3.1, 3.1, 2.1))
