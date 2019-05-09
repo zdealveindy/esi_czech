@@ -1,4 +1,4 @@
-# Zeleny D. & Chytry M. (2019): Ecological Specialization Index for species of the Czech flora. Preslia, XX:XX-XX.
+# Zeleny D. & Chytry M. (2019): Ecological Specialization Indices for species in the Czech flora. Preslia, XX:XX-XX.
 # Supplementary R code 3: Vltava river valley case study
 # Author of the R code: David Zeleny (zeleny@ntu.edu.tw, April 2019)
 
