@@ -1,14 +1,11 @@
-# Zeleny D. & Chytry M. (2019): Ecological Specialization Indices for species in the Czech flora. Preslia, XX:XX-XX.
+# Zeleny D. & Chytry M. (2019): Ecological Specialization Indices for species of the Czech flora. Preslia, 91:93-116. https://doi.org/10.23855/preslia.2019.093
 # Supplementary R code 2: Calculating summary and ploting figures
-# Author of the R code: David Zeleny (zeleny@ntu.edu.tw, April 2019)
+# Author of the R code: David Zeleny (zeleny@ntu.edu.tw, May 2019)
 
 # install.packages ('ppcor')  # required for calculating partical correlation
+# install.packages ('agricolae')  # required for calculating post hoc comparison (HSD.test)
 
 ### Load results of calculation, calculate summary and plot figures ----
-#setwd ('c:/Users/zeleny/Dropbox/CLANKY/generalists specialists czech vegetation/data/ESI Czech database_v2.0')
-# load ('theta92.r')
-# load ('theta73.r')
-# load ('theta19.r')
 
 # Load data from GitHub
 load (url ('https://github.com/zdealveindy/esi_czech/blob/master/theta92.r?raw=true')) # load theta92

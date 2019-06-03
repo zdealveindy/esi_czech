@@ -1,6 +1,6 @@
-# Zeleny D. & Chytry M. (2019): Ecological Specialization Indices for species in the Czech flora. Preslia, XX:XX-XX.
+# Zeleny D. & Chytry M. (2019): Ecological Specialization Indices for species of the Czech flora. Preslia, 91:93-116. https://doi.org/10.23855/preslia.2019.093
 # Supplementary R code 3: Vltava river valley case study
-# Author of the R code: David Zeleny (zeleny@ntu.edu.tw, April 2019)
+# Author of the R code: David Zeleny (zeleny@ntu.edu.tw, May 2019)
 
 
 # Required libraries:
@@ -21,6 +21,7 @@ vltava_ESI <- vltava_ESI_merged[, 'ESI_f', drop = F]
 row.names (vltava_ESI) <- as.character (vltava_ESI_merged$spec_name)
 
 # Calculating fourth corner and community weighted mean analysis between ESI_f and 13 env. variables
+# (parallel calculation on the computer with 4 cores - change argument parallel = 4 into lower/higher number if your computer has different number of cores)
 
 cwm_ESI <- cwm (com = vltava_spe_herbs_pa, traits = vltava_ESI$ESI_f)
 set.seed (5867)

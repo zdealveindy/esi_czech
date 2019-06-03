@@ -1,6 +1,6 @@
-# Zeleny D. & Chytry M. (2019): Ecological Specialization Indices for species in the Czech flora. Preslia, XX:XX-XX.
+# Zeleny D. & Chytry M. (2019): Ecological Specialization Indices for species of the Czech flora. Preslia, 91:93-116. https://doi.org/10.23855/preslia.2019.093
 # Supplementary R code 1: Calculating Ecological Specialization Index
-# Author of the R code: David Zeleny (zeleny@ntu.edu.tw, April 2019)
+# Author of the R code: David Zeleny (zeleny@ntu.edu.tw, May 2019)
 
 # Note: the script is provided as a reference for the statistical analysis. Since primary data used in this R code
 # are not publicly available, this R script is not reproducible. This does not apply to the other two R codes, for which
